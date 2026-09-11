@@ -131,7 +131,7 @@ PlacementPilot-AI/
 └── .gitignore
 ⚙️ Installation
 1. Clone the Repository
-git clone https://github.com/YOUR_USERNAME/PlacementPilot-AI.git
+ git clone https://github.com/Mohid223/PlacementPilot-AI.git
 
 cd PlacementPilot-AI
 🐍 Backend Setup

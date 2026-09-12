@@ -1939,3 +1939,1034 @@ nav {
     font-size: 11px;
   }
 }
+
+/* =========================================================
+   ENHANCED MOBILE RESPONSIVENESS
+   ========================================================= */
+
+/* Prevent horizontal scrolling */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .page {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .dashboard-grid,
+  .practice-grid {
+    width: 100%;
+  }
+
+  .dashboard-card,
+  .practice-card,
+  .assistant-container,
+  .question-card,
+  .result-card,
+  .feedback-card,
+  .next-questions-card,
+  .simple-page-card,
+  .profile-card {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .chat-area {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .sidebar {
+    width: min(280px, 85vw);
+    max-width: 85vw;
+
+    height: 100dvh;
+
+    padding: 20px 13px;
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    transform: translateX(-105%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .mobile-overlay {
+    position: fixed;
+    inset: 0;
+
+    width: 100vw;
+    height: 100dvh;
+
+    display: block;
+
+    background: rgba(15, 23, 42, 0.28);
+
+    backdrop-filter: blur(3px);
+
+    z-index: 90;
+  }
+
+  .main {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .topbar {
+    width: 100%;
+    height: 64px;
+
+    padding: 0 16px;
+  }
+
+  .menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+  }
+
+  .topbar-right {
+    gap: 8px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  :root {
+    --topbar-height: 62px;
+    --radius: 15px;
+    --radius-small: 10px;
+  }
+
+
+  /* ---------- PAGE ---------- */
+
+  .page {
+    width: 100%;
+
+    padding: 18px 14px 30px;
+
+    overflow-x: hidden;
+  }
+
+
+  /* ---------- TOPBAR ---------- */
+
+  .topbar {
+    height: 62px;
+
+    padding: 0 13px;
+  }
+
+  .topbar-page {
+    max-width: 55vw;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-size: 13px;
+  }
+
+  .topbar-right {
+    gap: 7px;
+  }
+
+  .notification-btn,
+  .menu-btn {
+    width: 36px;
+    height: 36px;
+
+    flex-shrink: 0;
+  }
+
+  .online-indicator {
+    display: none;
+  }
+
+
+  /* ---------- PAGE HEADING ---------- */
+
+  .page-heading {
+    margin-bottom: 18px;
+  }
+
+  .page-heading h1 {
+    margin-bottom: 6px;
+
+    font-size: 22px;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.5px;
+  }
+
+  .page-heading > p:last-child {
+    font-size: 11px;
+
+    line-height: 1.6;
+  }
+
+
+  /* ---------- DASHBOARD ---------- */
+
+  .dashboard-grid {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 13px;
+  }
+
+  .large-card {
+    grid-column: span 1;
+  }
+
+  .dashboard-card {
+    width: 100%;
+
+    padding: 16px;
+
+    border-radius: 15px;
+  }
+
+  .dashboard-card h2 {
+    font-size: 22px;
+  }
+
+  .large-card h2 {
+    font-size: 29px;
+  }
+
+  .card-description {
+    font-size: 11px;
+
+    line-height: 1.6;
+  }
+
+  .card-icon {
+    width: 39px;
+    height: 39px;
+
+    border-radius: 11px;
+
+    font-size: 16px;
+  }
+
+
+  /* ---------- SECTION HEADING ---------- */
+
+  .section-heading {
+    margin: 24px 0 13px;
+
+    gap: 10px;
+  }
+
+  .section-heading h2 {
+    font-size: 15px;
+  }
+
+
+  /* ---------- QUICK ACTIONS ---------- */
+
+  .quick-actions {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .quick-action {
+    width: 100%;
+
+    min-height: 96px;
+
+    padding: 15px;
+  }
+
+  .quick-action > span {
+    font-size: 19px;
+  }
+
+  .quick-action strong {
+    font-size: 12px;
+  }
+
+  .quick-action small {
+    font-size: 10px;
+  }
+
+
+  /* ---------- PROGRESS ---------- */
+
+  .progress-area {
+    margin-top: 20px;
+  }
+
+  .progress-bar {
+    height: 7px;
+  }
+
+
+  /* =======================================================
+     AI ASSISTANT
+     ======================================================= */
+
+  .assistant-container {
+    width: 100%;
+
+    border-radius: 16px;
+  }
+
+  .assistant-header {
+    min-height: 68px;
+
+    padding: 13px 14px;
+
+    gap: 10px;
+  }
+
+  .assistant-status {
+    min-width: 0;
+
+    gap: 8px;
+  }
+
+  .assistant-header h2 {
+    font-size: 13px;
+  }
+
+  .powered {
+    font-size: 9px;
+  }
+
+
+  /* ---------- CHAT ---------- */
+
+  .chat-area {
+    width: 100%;
+
+    min-height: 400px;
+    max-height: 60vh;
+
+    padding: 15px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .empty-chat {
+    min-height: 350px;
+
+    padding: 10px;
+  }
+
+  .empty-icon {
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: 14px;
+
+    border-radius: 16px;
+
+    font-size: 21px;
+  }
+
+  .empty-chat h3 {
+    font-size: 15px;
+  }
+
+  .empty-chat > p {
+    max-width: 95%;
+
+    font-size: 11px;
+  }
+
+
+  /* ---------- SUGGESTIONS ---------- */
+
+  .suggestions {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    margin-top: 15px;
+  }
+
+  .suggestions button {
+    width: 100%;
+
+    min-height: 36px;
+
+    padding: 8px 10px;
+
+    font-size: 10px;
+  }
+
+
+  /* ---------- MESSAGES ---------- */
+
+  .message {
+    width: auto;
+
+    max-width: 92%;
+
+    margin-bottom: 14px;
+  }
+
+  .message-content {
+    max-width: 100%;
+
+    padding: 10px 12px;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .message-label {
+    font-size: 8px;
+  }
+
+
+  /* ---------- CHAT INPUT ---------- */
+
+  .chat-input-area {
+    width: 100%;
+
+    padding: 9px;
+
+    gap: 7px;
+
+    align-items: flex-end;
+  }
+
+  .chat-input-area textarea {
+    width: 100%;
+    min-width: 0;
+
+    min-height: 44px;
+    max-height: 110px;
+
+    padding: 11px;
+
+    font-size: 11px;
+  }
+
+  .send-btn {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+
+    border-radius: 11px;
+
+    font-size: 15px;
+  }
+
+
+  /* =======================================================
+     PRACTICE
+     ======================================================= */
+
+  .practice-grid {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 12px;
+  }
+
+  .practice-card {
+    width: 100%;
+
+    padding: 17px;
+
+    border-radius: 15px;
+  }
+
+  .practice-card h2 {
+    font-size: 15px;
+  }
+
+  .practice-card p {
+    font-size: 10px;
+  }
+
+  .tags span,
+  .result-tags span {
+    font-size: 8px;
+
+    padding: 5px 7px;
+  }
+
+
+  /* ---------- BUTTONS ---------- */
+
+  .primary-btn,
+  .secondary-btn {
+    min-height: 40px;
+
+    padding: 9px 13px;
+
+    font-size: 10px;
+  }
+
+
+  /* ---------- ADAPTIVE FLOW ---------- */
+
+  .adaptive-flow {
+    flex-wrap: wrap;
+
+    gap: 5px;
+
+    line-height: 1.4;
+  }
+
+  .adaptive-flow span {
+    padding: 5px 7px;
+
+    font-size: 9px;
+  }
+
+
+  /* =======================================================
+     PRACTICE TEST
+     ======================================================= */
+
+  .practice-test {
+    width: 100%;
+
+    max-width: 100%;
+  }
+
+  .practice-test-header,
+  .result-header {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+  }
+
+  .practice-test-header h2,
+  .result-header h2 {
+    font-size: 18px;
+  }
+
+  .question-count {
+    font-size: 9px;
+  }
+
+  .question-card {
+    width: 100%;
+
+    margin-bottom: 12px;
+
+    padding: 16px;
+
+    border-radius: 14px;
+  }
+
+  .question-number {
+    width: 27px;
+    height: 27px;
+
+    margin-bottom: 10px;
+  }
+
+  .question-content h3 {
+    font-size: 13px;
+
+    line-height: 1.55;
+
+    overflow-wrap: anywhere;
+  }
+
+  .question-content textarea {
+    width: 100%;
+
+    min-height: 100px;
+
+    padding: 11px;
+
+    font-size: 11px;
+  }
+
+  .submit-practice {
+    width: 100%;
+
+    min-height: 44px;
+  }
+
+
+  /* =======================================================
+     PRACTICE RESULT
+     ======================================================= */
+
+  .practice-result {
+    width: 100%;
+
+    max-width: 100%;
+  }
+
+  .result-header .secondary-btn {
+    margin-left: 0;
+
+    width: 100%;
+  }
+
+  .result-stats {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 9px;
+
+    margin-bottom: 13px;
+  }
+
+  .result-stat {
+    padding: 15px;
+  }
+
+  .result-stat span {
+    font-size: 9px;
+  }
+
+  .result-stat strong {
+    font-size: 20px;
+  }
+
+  .result-grid {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 11px;
+  }
+
+  .result-card,
+  .next-questions-card,
+  .feedback-card {
+    width: 100%;
+
+    padding: 15px;
+
+    border-radius: 13px;
+  }
+
+  .next-questions-card,
+  .feedback-card {
+    grid-column: span 1;
+  }
+
+  .result-card h3,
+  .next-questions-card h3,
+  .feedback-card h3 {
+    font-size: 13px;
+  }
+
+  .result-muted,
+  .feedback-card p:last-child {
+    font-size: 10px;
+
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+  }
+
+  .next-question-text {
+    font-size: 10px;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  /* =======================================================
+     SIMPLE PAGES
+     ======================================================= */
+
+  .simple-page-card {
+    width: 100%;
+
+    padding: 22px 16px;
+
+    border-radius: 15px;
+  }
+
+  .simple-page-card h2 {
+    font-size: 16px;
+  }
+
+  .simple-page-card p {
+    font-size: 10px;
+  }
+
+
+  /* =======================================================
+     PROFILE
+     ======================================================= */
+
+  .profile-card {
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    padding: 19px;
+
+    border-radius: 15px;
+  }
+
+  .profile-avatar {
+    width: 65px;
+    height: 65px;
+
+    min-width: 65px;
+
+    border-radius: 18px;
+
+    font-size: 21px;
+  }
+
+  .profile-info {
+    width: 100%;
+  }
+
+  .profile-info h2 {
+    font-size: 17px;
+  }
+
+  .profile-info > p {
+    font-size: 11px;
+
+    overflow-wrap: anywhere;
+  }
+
+  .profile-info > span {
+    font-size: 9px;
+  }
+
+
+  /* =======================================================
+     SIDEBAR
+     ======================================================= */
+
+  .brand {
+    padding-bottom: 21px;
+  }
+
+  .nav-item {
+    min-height: 43px;
+
+    padding: 10px 11px;
+
+    font-size: 12px;
+  }
+
+  .sidebar-label {
+    font-size: 9px;
+
+    margin: 11px 0 7px;
+  }
+
+  .agent-status {
+    padding: 12px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .page {
+    padding: 16px 12px 25px;
+  }
+
+  .topbar {
+    padding: 0 11px;
+  }
+
+  .topbar-page {
+    max-width: 48vw;
+
+    font-size: 12px;
+  }
+
+  .notification-btn,
+  .menu-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .page-heading h1 {
+    font-size: 21px;
+  }
+
+  .page-heading > p:last-child {
+    font-size: 10px;
+  }
+
+  .dashboard-card {
+    padding: 14px;
+  }
+
+  .large-card h2 {
+    font-size: 27px;
+  }
+
+  .dashboard-card h2 {
+    font-size: 21px;
+  }
+
+  .card-description {
+    font-size: 10px;
+  }
+
+  .chat-area {
+    min-height: 380px;
+
+    max-height: 58vh;
+
+    padding: 12px;
+  }
+
+  .empty-chat {
+    min-height: 330px;
+  }
+
+  .message {
+    max-width: 94%;
+  }
+
+  .message-content {
+    font-size: 10px;
+
+    padding: 9px 11px;
+  }
+
+  .chat-input-area textarea {
+    min-height: 42px;
+
+    font-size: 10px;
+  }
+
+  .send-btn {
+    width: 42px;
+    min-width: 42px;
+    height: 42px;
+  }
+
+  .quick-action {
+    min-height: 91px;
+
+    padding: 14px;
+  }
+
+  .practice-card {
+    padding: 15px;
+  }
+
+  .question-card {
+    padding: 14px;
+  }
+
+  .question-content h3 {
+    font-size: 12px;
+  }
+
+  .question-content textarea {
+    min-height: 90px;
+
+    font-size: 10px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+
+  .adaptive-flow {
+    font-size: 9px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .page {
+    padding: 14px 10px 22px;
+  }
+
+  .topbar {
+    padding: 0 9px;
+  }
+
+  .topbar-page {
+    max-width: 42vw;
+
+    font-size: 11px;
+  }
+
+  .page-heading h1 {
+    font-size: 19px;
+  }
+
+  .dashboard-card {
+    padding: 13px;
+  }
+
+  .dashboard-card h2 {
+    font-size: 20px;
+  }
+
+  .large-card h2 {
+    font-size: 25px;
+  }
+
+  .quick-action {
+    min-height: 88px;
+  }
+
+  .assistant-header {
+    padding: 11px;
+  }
+
+  .assistant-header h2 {
+    font-size: 12px;
+  }
+
+  .chat-area {
+    padding: 10px;
+  }
+
+  .chat-input-area {
+    padding: 8px;
+  }
+
+  .message {
+    max-width: 96%;
+  }
+
+  .message-content {
+    font-size: 9px;
+  }
+
+  .practice-card,
+  .question-card,
+  .result-card,
+  .feedback-card,
+  .next-questions-card {
+    padding: 13px;
+  }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+  .nav-item:hover,
+  .dashboard-card:hover,
+  .quick-action:hover,
+  .practice-card:hover,
+  .primary-btn:hover,
+  .secondary-btn:hover,
+  .send-btn:hover {
+    transform: none;
+  }
+
+  .nav-item,
+  .quick-action,
+  .primary-btn,
+  .secondary-btn,
+  .send-btn,
+  .notification-btn,
+  .menu-btn {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button {
+    touch-action: manipulation;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}

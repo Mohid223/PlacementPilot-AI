@@ -10,24 +10,18 @@ import Interview from "./pages/Interview";
 const API_URL = "http://127.0.0.1:8000";
 
 function App() {
-  // =========================
-  // GENERAL STATES
-  // =========================
+  
 
   const [activePage, setActivePage] = useState("Dashboard");
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  // =========================
-  // AI ASSISTANT STATES
-  // =========================
+  
 
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // =========================
-  // NAVIGATION
-  // =========================
+   
 
   const navigation = [
     {
@@ -64,10 +58,7 @@ function App() {
     setActivePage(page);
     setSidebarOpen(false);
   };
-
-  // =========================
-  // AI ASSISTANT
-  // =========================
+ 
 
   const sendMessage = async () => {
     const userMessage = input.trim();
@@ -162,9 +153,7 @@ function App() {
     }
   };
 
-  // =========================
-  // DASHBOARD
-  // =========================
+  
 
   const renderDashboard = () => (
     <div className="page">
@@ -311,9 +300,7 @@ function App() {
     </div>
   );
 
-  // =========================
-  // AI ASSISTANT PAGE
-  // =========================
+   
 
   const renderAssistant = () => (
     <div className="page assistant-page">
@@ -472,10 +459,7 @@ function App() {
       </div>
     </div>
   );
-
-  // =========================
-  // RESUME PAGE
-  // =========================
+ 
 
   const renderResume = () => (
     <div className="page">
@@ -524,9 +508,7 @@ function App() {
     </div>
   );
 
-  // =========================
-  // JOB MATCH PAGE
-  // =========================
+  
 
   const renderJobMatch = () => (
     <div className="page">
@@ -575,9 +557,7 @@ function App() {
     </div>
   );
 
-  // =========================
-  // INTERVIEW PAGE
-  // =========================
+   
 
   const renderInterview = () => (
     <div className="page">
@@ -625,9 +605,7 @@ function App() {
     </div>
   );
 
-  // =========================
-  // PROFILE PAGE
-  // =========================
+ 
 
   const renderProfile = () => (
     <div className="page">
@@ -674,9 +652,7 @@ function App() {
     </div>
   );
 
-  // =========================
-  // PAGE ROUTER
-  // =========================
+ 
 
   const renderPage = () => {
 
@@ -708,9 +684,7 @@ function App() {
     }
   };
 
-  // =========================
-  // MAIN UI
-  // =========================
+ 
 
   return (
     <div className="app">

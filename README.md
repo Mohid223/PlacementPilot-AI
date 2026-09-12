@@ -2,81 +2,248 @@
 
 ### Agentic AI Placement Assistant
 
-PlacementPilot AI is an AI-powered career and placement assistant designed to help students prepare for software engineering and technical placement opportunities.
+PlacementPilot AI is an AI-powered career and placement preparation platform designed to help students prepare for software engineering and technical placement opportunities.
 
-It combines **AI assistance, adaptive practice, coding problems, resume analysis, job matching, interview preparation, and personalized career guidance** in one platform.
+It combines **AI assistance, adaptive practice, coding problems, resume analysis, job matching, interview preparation, and personalized career guidance** into a single platform.
 
 ---
 
 ## ✨ Features
 
-- 🤖 AI Career Assistant
-- 📝 Resume Analyzer
-- 💼 Job Match Analysis
-- 💻 Coding Practice
-- 🧠 Adaptive Learning
-- 🎯 Personalized Study Planning
-- 🎤 AI Mock Interview
-- 👤 Student Profile
-- 🔐 User Authentication
-- 📊 Placement Preparation Tracking
+* 🤖 AI Career Assistant
+* 📝 Resume Analyzer
+* 💼 Job Match Analysis
+* 💻 Coding Practice
+* 🧠 Adaptive Learning
+* 🎯 Personalized Study Planning
+* 🎤 AI Mock Interview
+* 👤 Student Profile
+* 🔐 JWT Authentication
+* 📊 Placement Preparation Tracking
 
 ---
 
 ## 🏗️ System Architecture
 
 ```text
-                    ┌─────────────────────┐
-                    │   React Frontend    │
-                    │   Vite + CSS        │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │   FastAPI Backend   │
-                    │      REST APIs      │
-                    └──────────┬──────────┘
-                               │
-             ┌─────────────────┼─────────────────┐
-             │                 │                 │
-             ▼                 ▼                 ▼
-       ┌───────────┐    ┌─────────────┐   ┌─────────────┐
-       │ AI Agents │    │   Database  │   │    Tools    │
-       └─────┬─────┘    └─────────────┘   └─────────────┘
+                         ┌──────────────────────┐
+                         │    React Frontend    │
+                         │      Vite + CSS      │
+                         └──────────┬───────────┘
+                                    │
+                                    │ REST API
+                                    ▼
+                         ┌──────────────────────┐
+                         │    FastAPI Backend   │
+                         │       Python         │
+                         └──────────┬───────────┘
+                                    │
+              ┌─────────────────────┼─────────────────────┐
+              │                     │                     │
+              ▼                     ▼                     ▼
+      ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
+      │  AI Agents   │      │   Database   │      │    Tools     │
+      ├──────────────┤      ├──────────────┤      ├──────────────┤
+      │ Planner      │      │ SQLAlchemy   │      │ Resume Parser│
+      │ Evaluator    │      │ SQLite       │      │ Job Analyzer │
+      │ Interviewer  │      │              │      │ Questions    │
+      │ Adaptive     │      │              │      │ Practice     │
+      │ Tool Executor│      │              │      │ Code Engine  │
+      └──────┬───────┘      └──────────────┘      └──────────────┘
              │
              ▼
-       ┌─────────────┐
-       │   Ollama    │
-       │  Qwen3:4b   │
-       └─────────────┘
-🛠️ Technology Stack
-Frontend
-React
-Vite
-JavaScript
-CSS
-Backend
-Python
-FastAPI
-SQLAlchemy
-SQLite
-JWT Authentication
-AI
-Ollama
-Qwen3:4b
-AI Agents
+      ┌──────────────────┐
+      │  Ollama / Qwen3  │
+      │       4B         │
+      └──────────────────┘
+```
+
+---
+
+## 🔄 Application Workflow
+
+```text
+Student
+   │
+   ▼
+React Frontend
+   │
+   ▼
+FastAPI REST API
+   │
+   ▼
 Planner Agent
-Evaluator Agent
-Interviewer Agent
-Adaptive Learning Agent
-Tool Executor
-Tools
-Resume Parser
-Job Analyzer
-Question Generator
-Coding Practice Engine
-Code Executor
-📂 Project Structure
+   │
+   ├── Resume Parser
+   ├── Job Analyzer
+   ├── Question Generator
+   ├── Practice Engine
+   └── Interviewer
+          │
+          ▼
+     Ollama / Qwen3
+          │
+          ▼
+      AI Response
+          │
+          ▼
+        Student
+```
+
+---
+
+## 🤖 AI Agent Workflow
+
+### 🧭 Planner Agent
+
+Understands the student's request and creates an appropriate execution plan.
+
+```text
+Student Request
+      ↓
+Understand User Intent
+      ↓
+Create Execution Plan
+      ↓
+Select Required Tool
+      ↓
+Execute Tool
+      ↓
+Generate Response
+```
+
+### 📊 Evaluator Agent
+
+Evaluates student performance across:
+
+* Technical answers
+* Coding performance
+* Interview responses
+* Practice progress
+
+It identifies weak areas and provides improvement recommendations.
+
+### 🎤 Interviewer Agent
+
+Provides AI-powered interview preparation by:
+
+* Generating interview questions
+* Conducting interview-style interactions
+* Evaluating responses
+* Providing feedback
+* Identifying improvement areas
+
+### 🧠 Adaptive Learning Agent
+
+Adjusts the student's preparation based on their performance.
+
+```text
+Student Performance
+        ↓
+Analyze Performance
+        ↓
+Identify Weak Areas
+        ↓
+Recommend Topics
+        ↓
+Generate Practice
+        ↓
+Evaluate Results
+        ↓
+Update Recommendations
+```
+
+### ⚙️ Tool Executor
+
+Connects the AI agents with the application's tools and executes the appropriate tool based on the generated plan.
+
+---
+
+## 🛠️ Technology Stack
+
+### Frontend
+
+* React
+* Vite
+* JavaScript
+* CSS
+
+### Backend
+
+* Python
+* FastAPI
+* SQLAlchemy
+* SQLite
+* JWT Authentication
+
+### AI
+
+* Ollama
+* Qwen3:4b
+* Agent-based AI architecture
+
+---
+
+## 🧰 Application Tools
+
+| Tool               | Purpose                                               |
+| ------------------ | ----------------------------------------------------- |
+| Resume Parser      | Extract and analyze resume information                |
+| Job Analyzer       | Analyze job requirements and identify relevant skills |
+| Question Generator | Generate technical practice questions                 |
+| Practice Engine    | Manage coding and technical practice                  |
+| Code Executor      | Execute and evaluate submitted code                   |
+
+---
+
+## 💻 Coding Practice
+
+PlacementPilot AI includes a coding practice system containing **616 programming problems**.
+
+Problems are available in:
+
+* 🟢 Easy
+* 🟡 Medium
+* 🔴 Hard
+
+### Supported Features
+
+* Problem statements
+* Examples
+* Constraints
+* Test cases
+* Code execution
+* Output comparison
+
+### Supported Languages
+
+* Python
+* C++
+* JavaScript
+
+---
+
+## 🔐 Authentication
+
+The application uses **JWT-based authentication** for protected APIs.
+
+```text
+Signup
+   ↓
+Login
+   ↓
+JWT Access Token
+   ↓
+Protected APIs
+   ↓
+Student Profile
+```
+
+---
+
+## 📂 Project Structure
+
+```text
 PlacementPilot-AI/
 │
 ├── backend/
@@ -104,8 +271,7 @@ PlacementPilot-AI/
 │   ├── schemas.py
 │   ├── auth.py
 │   ├── requirements.txt
-│   ├── .env.example
-│   └── .env
+│   └── .env.example
 │
 ├── frontend/
 │   │
@@ -129,229 +295,266 @@ PlacementPilot-AI/
 │
 ├── README.md
 └── .gitignore
-⚙️ Installation
-1. Clone the Repository
- git clone https://github.com/Mohid223/PlacementPilot-AI.git
+```
 
+---
+
+# ⚙️ Installation
+
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/Mohid223/PlacementPilot-AI.git
 cd PlacementPilot-AI
-🐍 Backend Setup
+```
 
-Go to the backend directory:
+---
 
+## 2. Backend Setup
+
+Navigate to the backend directory:
+
+```bash
 cd backend
+```
 
 Create a virtual environment:
 
+```bash
 python -m venv venv
+```
 
-Activate it on Windows:
+### Windows
 
+```bash
 venv\Scripts\activate
+```
 
 Install dependencies:
 
+```bash
 pip install -r requirements.txt
-🤖 Ollama Setup
+```
 
-PlacementPilot AI currently uses Ollama with the Qwen3 4B model for local AI responses.
+---
 
-Install Ollama on your system and download the model:
+## 3. Ollama Setup
 
+PlacementPilot AI currently uses **Ollama with the Qwen3 4B model** for local AI responses.
+
+Download the model:
+
+```bash
 ollama pull qwen3:4b
+```
 
 Start the model:
 
+```bash
 ollama run qwen3:4b
+```
 
-The application expects Ollama to run at:
+Ollama runs locally at:
 
+```text
 http://localhost:11434
+```
 
-Ollama and the Qwen3 model are not included in this repository.
+> Ollama and the Qwen3 model are not included in this repository.
 
-🔐 Environment Variables
+---
 
-Create a .env file inside the backend folder.
+## 4. Environment Variables
 
+Create a `.env` file inside the `backend` directory.
+
+```env
 OLLAMA_URL=http://localhost:11434/api/chat
 OLLAMA_MODEL=qwen3:4b
+```
 
-Do not commit the .env file to GitHub.
+Use `.env.example` as a template.
 
-Use .env.example as a template.
+> **Do not commit `.env`, API keys, passwords, or private credentials to GitHub.**
 
-▶️ Run Backend
+---
 
-Inside the backend folder:
+## 5. Run the Backend
 
+Inside the `backend` directory:
+
+```bash
 uvicorn main:app --reload
+```
 
-Backend will run at:
+Backend:
 
+```text
 http://127.0.0.1:8000
+```
 
 FastAPI documentation:
 
+```text
 http://127.0.0.1:8000/docs
-⚛️ Frontend Setup
+```
 
-Open another terminal.
+---
 
-Go to the frontend:
+## 6. Frontend Setup
 
+Open another terminal and navigate to the frontend:
+
+```bash
 cd frontend
+```
 
 Install dependencies:
 
+```bash
 npm install
+```
 
 Start the development server:
 
+```bash
 npm run dev
+```
 
-Frontend will run at:
+Frontend:
 
+```text
 http://localhost:5173
-🔄 Application Flow
-Student
-   │
-   ▼
-React Frontend
-   │
-   ▼
-FastAPI REST API
-   │
-   ▼
-Planner Agent
-   │
-   ├── Resume Parser
-   ├── Job Analyzer
-   ├── Question Generator
-   ├── Practice Engine
-   └── Interviewer
-          │
-          ▼
-      Ollama / Qwen3
-          │
-          ▼
-      AI Response
-          │
-          ▼
-      Student
-🤖 AI Agent Workflow
-Planner Agent
+```
 
-Understands the student's request and creates an execution plan.
+---
 
-Evaluator Agent
+# 🚀 Run the Complete Application
 
-Evaluates answers, coding performance, and preparation progress.
+Run the following components in separate terminals.
 
-Interviewer Agent
+### Terminal 1 — Ollama
 
-Generates interview questions and conducts AI-based interview preparation.
+```bash
+ollama run qwen3:4b
+```
 
-Adaptive Agent
+### Terminal 2 — Backend
 
-Adjusts practice and learning recommendations according to the student's performance.
+```bash
+cd backend
+venv\Scripts\activate
+uvicorn main:app --reload
+```
 
-Tool Executor
+### Terminal 3 — Frontend
 
-Selects and executes the appropriate PlacementPilot tools.
+```bash
+cd frontend
+npm run dev
+```
 
-💻 Coding Practice
+Then open:
 
-PlacementPilot includes a coding practice system containing 616 programming problems.
+```text
+http://localhost:5173
+```
 
-Problems include different difficulty levels:
+---
 
-Easy
-Medium
-Hard
+# 🔎 Job Matching
 
-The practice system supports:
+PlacementPilot AI includes job analysis functionality for comparing job requirements with student skills.
 
-Problem statements
-Examples
-Constraints
-Test cases
-Python
-C++
-JavaScript
-Code execution
-Output comparison
-🔐 Authentication
+The planned workflow is:
 
-The application uses JWT-based authentication.
-
-Supported operations:
-
-Signup
-   ↓
-Login
-   ↓
-JWT Access Token
-   ↓
-Protected APIs
-   ↓
+```text
 Student Profile
-🎯 Future Improvements
-Real-time job scraping
-Advanced resume scoring
-More programming languages
-Better AI interview evaluation
-Voice-based mock interviews
-Placement analytics dashboard
-Personalized learning roadmap
-Production-grade code sandbox
-Cloud deployment
-PostgreSQL support
-⚠️ Security Note
+      ↓
+Job Requirements
+      ↓
+Job Analyzer
+      ↓
+Skill Matching
+      ↓
+Match Analysis
+      ↓
+Skill Gap Recommendations
+```
 
-The current coding execution engine is intended for development and hackathon use.
+For future real-time job search functionality, external job APIs such as **SerpApi** can be integrated.
 
-Production deployment should use a secure sandbox/containerized execution environment before allowing arbitrary user code execution.
+---
 
-Never commit:
+# 🔮 Future Improvements
 
+* 🌐 Real-time job search integration
+* 📄 Advanced resume scoring
+* 🧠 Improved AI skill-gap analysis
+* 💻 Additional programming languages
+* 🎤 Advanced AI interview evaluation
+* 🎙️ Voice-based mock interviews
+* 📊 Advanced placement analytics
+* 🗺️ Personalized learning roadmap
+* 🔒 Production-grade secure code sandbox
+* ☁️ Cloud deployment
+* 🗄️ PostgreSQL support
+* ⚡ Improved multi-agent orchestration
+
+---
+
+# ⚠️ Security Note
+
+The current code execution engine is intended for **development and hackathon use**.
+
+Before production deployment, arbitrary user code should be executed inside a properly isolated and secure sandbox or containerized execution environment.
+
+### Never commit:
+
+```text
 .env
 *.db
 node_modules/
 __pycache__/
+venv/
+*.pyc
 API keys
 Passwords
 Private credentials
 Large AI model files
-👨‍💻 Project
+```
 
-PlacementPilot AI
+---
 
-An Agentic AI-powered placement preparation platform for students.
+# 👨‍💻 Project
 
-Built using:
+## PlacementPilot AI
 
-React + FastAPI + Python + SQLAlchemy + SQLite
-+ AI Agents + Ollama + Qwen3
-📌 Local Development
+### Agentic AI Placement Assistant
 
-Run these three components separately:
+An AI-powered placement preparation platform designed to help students prepare for technical placement opportunities through:
 
-Terminal 1 — Ollama
-ollama run qwen3:4b
-Terminal 2 — Backend
-cd backend
-venv\Scripts\activate
-uvicorn main:app --reload
-Terminal 3 — Frontend
-cd frontend
-npm run dev
+* AI-powered career assistance
+* Adaptive learning
+* Coding practice
+* Resume analysis
+* Job matching
+* Interview preparation
+* Personalized career guidance
 
-Then open:
+### Built With
 
-http://localhost:5173
+```text
+React + Vite + JavaScript + CSS
+                +
+Python + FastAPI + SQLAlchemy + SQLite
+                +
+AI Agents + Ollama + Qwen3 4B
+```
 
-**Ye version GitHub ke liye proper hai.** Bas `YOUR_USERNAME` ko apne GitHub username se replace kar dena.
+---
 
-Aur ek important point: README mein `.env` ka naam structure mein dikh raha hai, lekin `.gitignore` ki wajah se **actual `.env` GitHub par nahi jayega**.
-Google search API ke liye, ek related SerpApi option consider karein.
-Ad
+## 📜 License
+
+This project is developed for **educational, learning, and hackathon purposes**.
+
